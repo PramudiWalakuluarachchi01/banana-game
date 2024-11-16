@@ -9,7 +9,7 @@ const GameModule = () => {
           <h1 className="text-5xl font-extrabold text-black mb-2">BANANA QUIZ GAME</h1>
           <h2 className="text-3xl font-bold text-black mb-2 underline">Banana Bash</h2>
          <h1 className="text-xl font-bold text-black mr-96 ">Lives:</h1>
-    <h1 className="text-xl font-bold text-black -mt-5 ml-96 ">Time Lft:</h1>
+    <h1 className="text-xl font-bold text-black -mt-5 ml-96 ">Time Left:</h1>
           <div className="absolute top-40 left-2 -mt-32 ml-8">
            <Link to="/Home">
           <img src="back.png" alt="" />
