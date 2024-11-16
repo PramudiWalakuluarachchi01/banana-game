@@ -1,9 +1,22 @@
 
 import { Link } from "react-router-dom";
-
-
+import { useState } from "react";
 
 const SignUp = () => {
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [tPasswordMismatch, setPasswordMismatch] = useState("");
+  const [PasswordSizeError, setPasswordSizeError] = useState("");
+  const [UsernameTakenError, setUsernameTakenError] = useState("");
+  const [DiasableButton, setDiasableButton] = useState(true);
+  const [ PasswordInputype, setPasswordInputype] = useState("password");
+
+
   return (
     <div className="flex justify-center items-center h-screen w-screen text-black">
     <img
@@ -40,9 +53,14 @@ const SignUp = () => {
                   type="text"
                   id="username"
                   placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className="border rounded-3xl p-2 mb-2 shadow-md border-solid border-[#777777] w-full opacity-50 h-12"
                   required
                 />
+                 {setUsernameTakenError && (
+                  <p className="text-red-500">{setUsernameTakenError}</p>
+                )}
          </div>
 
 
@@ -53,6 +71,8 @@ const SignUp = () => {
               type="email"
               id="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="border rounded-3xl p-2 mb-2 shadow-md border-solid border-[#777777] w-full opacity-50 h-12"
               required
             />
@@ -62,25 +82,49 @@ const SignUp = () => {
           <div className="flex  w-3/6">
 
           <input
-                  type="password"
+                  type={PasswordInputype}
                   id="password"
                   placeholder="Password"
+                  value={password}
+                  onChange={handlePasswordChange}
                   className="border rounded-3xl p-2 mb-2 shadow-md border-solid border-[#777777] w-full opacity-50 h-12"
                   required
                 /> 
+                 <div className="absolute right-5 top-10 cursor-pointer" onClick={togglePasswordFieldType}>
+                  {(PasswordInputype === 'password') ? (
+                    <FaEye />
+                  ) : (
+                    <FaEyeSlash />
+                  )}
+                </div>
+                
+                {setPasswordSizeError && (
+                  <p className="text-red-500">{setPasswordSizeError}</p>
+                )}
             </div>
 
             <div className="flex  w-3/6">
 
         <input
-                 type="password"
+                 type={PasswordInputype}
                  id="confirmpassword"
-                 placeholder="Confirm Password"
+                 placeholder="Confirm Password" value={confirmPassword}
+                 onChange={handleConfirmPasswordChange}
                  className="border rounded-3xl p-2 mb-2 shadow-md border-solid border-[#777777] w-full opacity-50 h-12"
                  required
       /> 
-  </div>
-
+      <div className="absolute right-5 top-10 cursor-pointer" onClick={togglePasswordFieldType}>
+                  {(PasswordInputype === 'password') ? (
+                    <FaEye />
+                  ) : (
+                    <FaEyeSlash />
+                  )}
+                </div>
+                {setPasswordMismatch && (
+                  <p className="text-red-500">{setPasswordMismatch}</p>
+                )}
+              </div>
+            
        <Link to="/Home">
           <button
             type="submit"
@@ -102,6 +146,7 @@ const SignUp = () => {
     </div>
   </div>
   )
+
 }
 
-export default SignUp
+export default SignUp 
