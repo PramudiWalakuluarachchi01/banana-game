@@ -23,7 +23,7 @@ export default function CountDown({ seconds }) {
   return <div>{countdown}</div>;
 }
 
-// PropTypes usage
+
 CountDown.propTypes = {
   seconds: PropTypes.number.isRequired,
 };

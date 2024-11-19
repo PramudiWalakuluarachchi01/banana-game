@@ -14,7 +14,7 @@ const Difficulty = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="/Easy">Banana Bash</Link>
+                  <Link to="/GameModule">Banana Bash</Link>
                   </motion.div>
                 </li>
 
@@ -24,7 +24,7 @@ const Difficulty = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="/Medium">Banana Blitz</Link>
+                  <Link to="/GameModule">Banana Blitz</Link>
                   </motion.div>
                 </li> 
                 <li className="transition-all hover:scale-125 m-7 w-fit">
@@ -33,7 +33,7 @@ const Difficulty = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="/difficulty">Banana Frenzy</Link>
+                  <Link to="/GameModule">Banana Frenzy</Link>
                   </motion.div>
                 </li>   
        </ul>
