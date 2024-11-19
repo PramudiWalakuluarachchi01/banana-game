@@ -6,9 +6,10 @@ import Home from './Pages/Home'
 import Difficulty from './Pages/Difficulty'
 import User from './Pages/User'
 import ScoreBoard from './Pages/ScoreBoard'
-import Instructions from './Pages/Instructions'
 import GameModule from './Pages/GameModule'
+import Instructions from './Pages/Instructions'
 import ExtraQuiz from './Pages/ExtraQuiz'
+import CountDown from './Pages/CountDown'
 
 function App() {
   
@@ -23,9 +24,10 @@ function App() {
       <Route path="/Difficulty" element={<Difficulty/>} />
       <Route path="/User" element={<User/>} />
       <Route path="/ScoreBoard" element={<ScoreBoard/>} />
-      <Route path="/Instructions" element={<Instructions/>} />
       <Route path="/GameModule" element={<GameModule/>} />
+      <Route path="/Instructions" element={<Instructions/>} />
       <Route path="/ExtraQuiz" element={<ExtraQuiz/>} />
+      <Route path ="CountDown "  element= {<CountDown seconds={30}/>} />
       
     </Routes>
    </Router>
