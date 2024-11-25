@@ -90,7 +90,6 @@ const SignUp = () => {
     } catch (error) {
       console.log(error);
 
-      // Handle specific registration errors and provide meaningful messages
       switch (error.code) {
         case "auth/email-already-in-use":
           setError("Email address is already in use.");
@@ -107,25 +106,20 @@ const SignUp = () => {
     }
   };
 
-  // Function to send email verification
   const sendEmailVerify = async (user) => {
     try {
       await sendEmailVerification(user);
       console.log("Verification email sent");
     } catch (error) {
       console.error("Error sending verification email:", error);
-      // Handle error sending verification email
     }
   };
 
-  // Function to set user session
   const setUserSession = (userId, userName) => {
-    // can use local storage to store user session
     localStorage.setItem("userId", userId);
     localStorage.setItem("userName", userName);
   };
 
-  //Check if the username exists
   const checkUsernameExists = async (username) => {
     const dbRef = ref(getDatabase(app));
     const usernameRef = child(dbRef, "users");
@@ -276,7 +270,7 @@ const SignUp = () => {
               <p className="text-sm text-center">
                 Already have an account?{" "}
                 <Link to="/Login" className=" text-cyan-500 underline">
-                  LogIn
+                  Sign In
                 </Link>
               </p>
             </div>

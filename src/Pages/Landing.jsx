@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Landing = () => {
+  const navigate = useNavigate();
+  const userId = localStorage.getItem("userId");
+
+  useEffect(() => {
+    if (userId) {
+      // User is logged in
+      navigate("/home");
+    } else {
+      // User is not logged in
+      console.log("User is not logged in.");
+    }
+  }, [userId, navigate]); // Add navigate to the dependencies array
+
   return (
     <div className="flex justify-center items-center h-screen w-screen text-black">
       <div className="relative bg-[#A8A8A87A] bg-opacity-45 rounded-3xl w-7/12 h-4/6 flex flex-col justify-center items-center">
@@ -45,7 +60,7 @@ const Landing = () => {
                   onClick={Login}
                   className="rounded-full w-24 h-10 bg-emerald-600 text-white text-xl hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300"
                 >
-                  Log In
+                  Sign In
                 </button>
               </Link>
 

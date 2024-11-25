@@ -22,21 +22,21 @@ const ScoreBoard = () => {
         <div className="flex space-x-8 mb-8">
           <button
             onClick={() => setSelectedTab(1)}
-            className={`py-2 px-4 rounded-3xl ${selectedTab === 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`py-2 px-4 rounded-3xl ${selectedTab === 1 ? 'bg-amber-600 text-white text-xl  hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300' : 'bg-gray-200 text-gray-700'}`}
           >
-            Challenge 1
-          </button>
+            Banana Bash
+          </button>                                                                                                                    
           <button
             onClick={() => setSelectedTab(2)}
-            className={`py-2 px-4 rounded-3xl ${selectedTab === 2 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`py-2 px-4 rounded-3xl ${selectedTab === 2 ? 'bg-amber-600 text-white text-xl  hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300' : 'bg-gray-200 text-gray-700'}`}
           >
-            Challenge 2
+            Banana Blitz
           </button>
           <button
             onClick={() => setSelectedTab(3)}
-            className={`py-2 px-4 rounded-3xl ${selectedTab === 3 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`py-2 px-4 rounded-3xl ${selectedTab === 3 ? 'bg-amber-600 text-white text-xl  hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300' : 'bg-gray-200 text-gray-700'}`}
           >
-            Challenge 3
+            Banana Frenzy
           </button>
         </div>
 
@@ -156,8 +156,6 @@ const ScoreBoard = () => {
           className="select-none absolute w-36 h-36 top-2/3 left-2/3 transform -translate-x-1/2 -translate-y-1/2"
         />
 
-        
-        
       </div>
 
       

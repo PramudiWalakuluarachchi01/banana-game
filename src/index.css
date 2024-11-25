@@ -13,4 +13,5 @@ body {
   align-items: center;
   min-height: 100vh;
   background: rgba(215, 190, 30, 0.937);
+  overflow-y: hidden;
 }
