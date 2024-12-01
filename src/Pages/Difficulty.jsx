@@ -5,7 +5,7 @@ const Difficulty = () => {
   return (
     <div className="flex justify-center items-center h-screen w-screen text-black">
       <div className="relative bg-[#A8A8A87A] bg-opacity-45 rounded-3xl w-7/12 h-4/6 flex justify-center items-center">
-        <ul className="list-disc text-6xl font-itim font-bold text-black ml-10 inline-block select-none">
+        <ul className="list-disc text-6xl font-itim font-bold text-black ml-10 inline-block select-none z-10">
           <li className="transition-all hover:scale-125 m-7 w-fit">
             <motion.div
               className="box text-4xl underline"
@@ -45,7 +45,7 @@ const Difficulty = () => {
       <img
         src="pic3.png"
         alt="Decorative"
-        className="select-none absolute -bottom-32 -left-12"
+        className="select-none absolute -bottom-32 -left-12 z-0"
       />
     </div>
   );

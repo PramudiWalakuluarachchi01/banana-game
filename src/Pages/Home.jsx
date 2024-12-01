@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="flex justify-center items-center h-screen w-screen text-black">
       <div className="relative bg-[#A8A8A87A] bg-opacity-45 rounded-3xl w-7/12 h-4/6 flex justify-center items-center">
-        <ul className="list-disc text-6xl font-itim font-bold text-black ml-10 inline-block select-none">
+        <ul className="list-disc text-6xl font-itim font-bold text-black ml-10 inline-block select-none z-20">
           <li className="transition-all hover:scale-125 m-7 w-fit ">
             <motion.div
               className="box text-4xl underline"
@@ -28,7 +28,7 @@ const Home = () => {
           </li>
           <li className="transition-all hover:scale-125 m-7 w-fit">
             <motion.div
-              className="box text-4xl undezrline"
+              className="box text-4xl underline"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
@@ -50,7 +50,7 @@ const Home = () => {
       <img
         src="pic3.png"
         alt=""
-        className="select-none absolute -bottom-32 -left-12"
+        className="select-none absolute -bottom-32 -left-12 z-0"
       />
       <div></div>
     </div>

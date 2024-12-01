@@ -7,7 +7,7 @@ import { app } from "../../firebaseConfig";
 import { getDatabase, ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signin = () => {
   const [passwordFieldType, setPasswordFieldType] = useState("password");
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -126,14 +126,14 @@ const Login = () => {
             </div>
 
             <div>
-              <a href="#" className="text-cyan-500 underline">
+              <a href="#" className="text-cyan-600 underline">
                 Forgot Password?
               </a>
             </div>
 
             <button
               type="submit"
-              className={`bg-blue-500 text-white px-4 py-2 rounded-md w-1/5 mb-8 ${
+              className={`bg-emerald-600 text-white px-4 py-2 rounded-md w-1/5 mb-8 ${
                 loading ? "opacity-50 cursor-not-allowed" : ""
               }`}
               disabled={loading} // Disable the button when loading
@@ -168,7 +168,7 @@ const Login = () => {
             <div>
               <p className="text-sm text-center">
                 Don&apos;t have an account?{" "}
-                <Link to="/SignUp" className=" text-cyan-500 underline">
+                <Link to="/SignUp" className=" text-cyan-600 underline">
                   SignUp
                 </Link>
               </p>
@@ -180,4 +180,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;

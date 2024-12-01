@@ -66,7 +66,7 @@ function Profile_btn() {
                       <Link
                         to="/login"
                         className={`${
-                          active ? "bg-blue-500 text-white" : "text-gray-900"
+                          active ? "bg-emerald-600 text-white" : "text-gray-900"
                         } group flex w-full items-center rounded-md px-2 py-2 text-xl font-bold font-itim`}
                       >
                         Log In
@@ -78,7 +78,7 @@ function Profile_btn() {
                       <Link
                         to="/Registration"
                         className={`${
-                          active ? "bg-blue-500 text-white" : "text-gray-900"
+                          active ? "bg-emerald-600 text-white" : "text-gray-900"
                         } group flex w-full items-center rounded-md px-2 py-2 text-xl font-bold font-itim`}
                       >
                         Register
@@ -93,7 +93,7 @@ function Profile_btn() {
                       <button
                         onClick={toggleProfilePopup}
                         className={`${
-                          active ? "bg-blue-500 text-white" : "text-gray-900"
+                          active ? "bg-emerald-600 text-white" : "text-gray-900"
                         } group flex w-full items-center rounded-md px-2 py-2 text-xl font-bold font-itim`}
                       >
                         Profile
