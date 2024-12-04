@@ -251,9 +251,7 @@ const SignUp = () => {
               {PasswordMismatch && (
                 <p className="text-red-500">{PasswordMismatch}</p>
               )}
-              {PasswordMismatch && (
-                <p className="text-red-500">{PasswordMismatch}</p>
-              )}
+              
             </div>
 
             <button

@@ -12,8 +12,10 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "canvas-confetti": "^1.9.3",
+    "date-fns": "^4.1.0",
     "firebase": "^11.0.2",
     "fireworks-js": "^2.10.8",
+    "ldrs": "^1.0.2",
     "motion": "^11.11.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

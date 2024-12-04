@@ -14,7 +14,7 @@ const Landing = () => {
       navigate("/home");
     } else {
       // User is not logged in
-      console.log("User is not logged in.");
+      // console.log("User is not logged in.");
     }
   }, [userId, navigate]); // Add navigate to the dependencies array
 
@@ -45,7 +45,7 @@ const Landing = () => {
         <img 
           src="minionGif.gif" 
           alt=""
-          className="select-none absolute  justify-center -top-52 inset-0 left-80 align-top"
+          className="select-none absolute  justify-center -top-52 inset-0 left-64 align-top"
         />
 
         <div className="w-full text-center mt-8">

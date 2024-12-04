@@ -15,6 +15,7 @@ const ScoreBoard = () => {
   const [difficulty, setDifficulty] = useState("easy");
   const [scoreboardData, setScoreboardData] = useState([]);
   const [previousTopScore, setPreviousTopScore] = useState(null);
+  var userName = localStorage.getItem("userName");
 
   const fetchScoreboardData = async () => {
     const db = getDatabase();
@@ -52,8 +53,8 @@ const ScoreBoard = () => {
 
   const triggerFireworks = () => {
     confetti({
-      particleCount: 100,
-      spread: 70,
+      particleCount: 500,
+      spread: 200,
       origin: { y: 0.6 },
     });
   };
@@ -108,8 +109,8 @@ const ScoreBoard = () => {
             onClick={() => setSelectedTab(1)}
             className={`py-2 px-4 rounded-3xl ${
               selectedTab === 1
-                ? "bg-amber-600 text-white text-xl hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-emerald-600 text-white text-xl py-2 transition-colors duration-300"
+                : "bg-gray-200 text-gray-700 hover:bg-emerald-300 transition-colors duration-300"
             }`}
           >
             Banana Bash
@@ -118,8 +119,8 @@ const ScoreBoard = () => {
             onClick={() => setSelectedTab(2)}
             className={`py-2 px-4 rounded-3xl ${
               selectedTab === 2
-                ? "bg-amber-600 text-white text-xl hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-emerald-600 text-white  text-xl py-2 transition-colors duration-300"
+                : "bg-gray-200 text-gray-700 hover:bg-emerald-300 transition-colors duration-300"
             }`}
           >
             Banana Blitz
@@ -128,8 +129,8 @@ const ScoreBoard = () => {
             onClick={() => setSelectedTab(3)}
             className={`py-2 px-4 rounded-3xl ${
               selectedTab === 3
-                ? "bg-amber-600 text-white text-xl hover:bg-white hover:text-emerald-600 py-2 transition-colors duration-300"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-emerald-600 text-white  text-xl  py-2 transition-colors duration-300"
+                : "bg-gray-200 text-gray-700 hover:bg-emerald-300 transition-colors duration-300"
             }`}
           >
             Banana Frenzy
@@ -139,8 +140,14 @@ const ScoreBoard = () => {
         {/* Scoreboard positions */}
         <div className="relative w-full h-1/2 flex justify-between items-center">
           {scoreboardData[1] && (
-            <div className="absolute left-1/4 flex flex-col items-center">
-              <div className="bg-gray-200 text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2">
+            <div className="absolute left-1/4 top-20 flex flex-col items-center">
+              <div
+                className={`bg-gray-200 text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2 ${
+                  scoreboardData[1].username === userName
+                    ? `bg-blue-400`
+                    : `bg-gray-200`
+                }`}
+              >
                 {scoreboardData[1].username}
               </div>
               <img
@@ -151,8 +158,14 @@ const ScoreBoard = () => {
             </div>
           )}
           {scoreboardData[0] && (
-            <div className="absolute top-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-              <div className="bg-gray-200 text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2">
+            <div className="absolute top-7 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+              <div
+                className={`bg-gray-200 text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2${
+                  scoreboardData[0].username === userName
+                    ? `bg-blue-400`
+                    : `bg-gray-200`
+                }`}
+              >
                 {scoreboardData[0].username}
               </div>
               <img
@@ -163,8 +176,14 @@ const ScoreBoard = () => {
             </div>
           )}
           {scoreboardData[2] && (
-            <div className="absolute right-1/4 flex flex-col items-center">
-              <div className="bg-gray-200 text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2">
+            <div className="absolute right-1/4 top-20 flex flex-col items-center">
+              <div
+                className={`text-gray-800 text-center py-2 px-4 rounded-full shadow-lg mb-2 ${
+                  scoreboardData[2].username === userName
+                    ? `bg-blue-400`
+                    : `bg-gray-200`
+                }`}
+              >
                 {scoreboardData[2].username}
               </div>
               <img
@@ -176,11 +195,13 @@ const ScoreBoard = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-3 gap-4 mt-16 w-full px-8">
+        <div className="grid grid-cols-3 gap-4 mt-16 w-full px-8 mb-5">
           {scoreboardData.slice(3, 9).map((user, index) => (
             <div
               key={index}
-              className="flex flex-col items-center bg-gray-200 text-gray-800 py-4 px-6 rounded-lg shadow-md"
+              className={`flex flex-col items-center bg-gray-200 text-gray-800 py-4 px-6 rounded-lg shadow-md ${
+                user.username === userName ? `bg-blue-400` : `bg-gray-200`
+              }`}
             >
               <div className="text-lg font-bold">#{index + 4}</div>
               <div className="text-center mt-2">{user.username}</div>

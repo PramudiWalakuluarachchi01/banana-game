@@ -9,7 +9,7 @@ import ScoreBoard from './Pages/ScoreBoard'
 import GameModule from './Pages/GameModule'
 import Instructions from './Pages/Instructions'
 import ExtraQuiz from './Pages/ExtraQuiz'
-import CountDown from './Pages/CountDown'
+import Clock from './Pages/Clock'
 
 function App() {
   
@@ -27,9 +27,9 @@ function App() {
       <Route path="/GameModule" element={<GameModule/>} />
       <Route path="/Instructions" element={<Instructions/>} />
       <Route path="/ExtraQuiz" element={<ExtraQuiz/>} />
-      <Route path ="CountDown "  element= {<CountDown seconds={30}/>} />
       
     </Routes>
+    {/* <Clock/> */}
    </Router>
   )
 }

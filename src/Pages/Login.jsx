@@ -2,7 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { app } from "../../firebaseConfig";
 import { getDatabase, ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +25,39 @@ const Signin = () => {
     );
   };
 
+  const handleForgotPassword = async () => {
+    setLoading(true); // Set loading state to true when initiating password reset
+    setError(null); // Reset any previous errors
+
+    if (email === "") {
+      setError("Please enter your email address");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const auth = getAuth(app);
+      await sendPasswordResetEmail(auth, email);
+      setError("Password reset email sent. Please check your inbox.");
+    } catch (error) {
+      switch (error.code) {
+        case "auth/invalid-email":
+          setError("Invalid email address.");
+          break;
+        case "auth/user-not-found":
+          setError("No user found with this email address.");
+          break;
+        default:
+          setError(
+            "Failed to send password reset email. Please try again later."
+          );
+          break;
+      }
+    } finally {
+      setLoading(false); // Set loading state to false after the process completes
+    }
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true); // Set loading state to true when logging in
@@ -33,7 +70,7 @@ const Signin = () => {
         password
       );
       const user = userCredential.user;
-      console.log("User logged in:", user.uid);
+      // console.log("User logged in:", user.uid);
 
       const db = getDatabase(app);
       const userRef = ref(db, `users/${user.uid}`);
@@ -126,7 +163,10 @@ const Signin = () => {
             </div>
 
             <div>
-              <a href="#" className="text-cyan-600 underline">
+              <a
+                onClick={handleForgotPassword}
+                className="text-cyan-600 underline cursor-pointer"
+              >
                 Forgot Password?
               </a>
             </div>

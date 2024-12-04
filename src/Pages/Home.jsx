@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Profile_btn from "./profile_btn";
 
 const Home = () => {
+  const userId = localStorage.getItem("userId");
+
+  const [showBackButton, setShowBackButton] = useState(false);
+
+  useEffect(() => {
+    if (userId) {
+      // User is logged in
+      setShowBackButton(false);
+    } else {
+      // User is not logged in
+      setShowBackButton(true);
+    }
+  }, [userId]);
+
   return (
     <div className="flex justify-center items-center h-screen w-screen text-black">
       <div className="relative bg-[#A8A8A87A] bg-opacity-45 rounded-3xl w-7/12 h-4/6 flex justify-center items-center">
@@ -38,14 +53,16 @@ const Home = () => {
         </ul>
       </div>
       <div className="absolute top-40 right-96 mt-6 mr-5">
-        <Profile_btn/>
+        <Profile_btn />
       </div>
 
-      <div className="absolute top-44 left-28 mt-6 ml-80">
-        <Link to="/">
-          <img src="back.png" alt="" />
-        </Link>
-      </div>
+      {showBackButton && (
+        <div className="absolute top-44 left-28 mt-6 ml-80">
+          <Link to="/">
+            <img src="back.png" alt="" />
+          </Link>
+        </div>
+      )}
 
       <img
         src="pic3.png"
