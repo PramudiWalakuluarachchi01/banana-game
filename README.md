@@ -200,10 +200,10 @@ This project demonstrates:
 ---
 
 # 📸 Screenshots
-<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_01.png"  width=400 height=500>
-<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_02.png"  width=200 height=300>
-<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_03.png"  width=200 height=300>
-<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_04.png"  width=200 height=300>
+<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_01.png"  width=500 height=600>
+<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_02.png"  width=500 height=600>
+<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_03.png"  width=500 height=600>
+<img src="https://github.com/PramudiWalakuluarachchi01/banana-game/blob/8bd217b78cba546ae2d3a586c4ba52471acff082/banana-game_04.png"  width=500 height=600>
 
 ---
 
